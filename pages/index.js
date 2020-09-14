@@ -1,6 +1,5 @@
-import Head from 'next/head'
-import Layout from '../components/Layout'
-import styles from '../styles/Home.module.css'
+import Head from "next/head"
+import Layout from "../components/Layout"
 
 export default function Home() {
   return (
@@ -8,9 +7,7 @@ export default function Home() {
       <Head>
         <title>لینک‌هام</title>
       </Head>
-      <div>
-        Home
-      </div>
+      <div>Home</div>
     </Layout>
   )
 }

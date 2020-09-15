@@ -1,0 +1,34 @@
+.authChanger {
+  margin-right: 0.5em;
+  border-bottom: 1px dashed black;
+  cursor: pointer;
+}
+
+.authChanger:hover {
+  color: #4a00e0;
+  border-bottom: 1px dashed #4a00e0;
+}
+
+.modal-header .close {
+  margin: -1rem auto -1rem -1rem;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #4a00e0;
+  &-brand {
+    background: #8e2de2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
+    background: -moz-linear-gradient(to right, #4a00e0, #8e2de2);
+    background: -o-linear-gradient(to right, #4a00e0, #8e2de2);
+    background: linear-gradient(
+      to right,
+      #4a00e0,
+      #8e2de2
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+  }
+}

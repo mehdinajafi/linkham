@@ -1,9 +1,15 @@
+@font-face {
+  src: url("../public/fonts/Sahel/Sahel.ttf");
+  font-family: "Sahel";
+}
+
 html,
 body {
+  direction: rtl;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Sahel", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +19,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+div {
+  direction: rtl !important;
+  text-align: right;
 }

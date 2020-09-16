@@ -1,0 +1,12 @@
+.authChanger a {
+  color: #191919;
+  text-decoration: none;
+  margin-right: 0.5em;
+  border-bottom: 1px dashed #191919;
+  cursor: pointer;
+}
+
+.authChanger a:hover {
+  color: #4a00e0;
+  border-bottom: 1px solid #4a00e0;
+}

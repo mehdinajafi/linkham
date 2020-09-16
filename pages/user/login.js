@@ -8,7 +8,7 @@ import router from "next/router"
 import Link from "next/link"
 import Head from "next/head"
 
-import NavbarPage from "../../components/Navbar"
+import NavbarPage from "../../src/components/Navbar"
 
 const Login = () => {
   const handleLogin = useCallback(

@@ -15,6 +15,7 @@ import {
 } from "react-bootstrap"
 import Head from "next/head"
 import router from "next/router"
+import TitleSubHeadings from "../src/components/dashboard/TitleSubHeadings"
 
 const Dashboard = () => {
   // validatedForm state to notify when the user sends a blank input
@@ -70,17 +71,21 @@ const Dashboard = () => {
         event.target[0].value = null
       } else {
         // If there is no address, take the data and post it in the database
-        firebase
-          .database()
-          .ref(`/users/${currentUser.uid}`)
-          .set({
-            address: event.target[0].value,
-            titleSubHeadings: {
-              title: event.target[1].value,
-              subHeadings: event.target[2].value,
-            },
-          })
-        router.push("/dashboard")
+        try {
+          firebase
+            .database()
+            .ref(`/users/${currentUser.uid}`)
+            .set({
+              address: event.target[0].value,
+              titleSubHeadings: {
+                title: event.target[1].value,
+                subHeadings: event.target[2].value,
+              },
+            })
+          router.push("/dashboard")
+        } catch (error) {
+          alert("خطایی پیش آمده است لطفا دوباره امتحان کنید")
+        }
       }
     }
   }
@@ -305,7 +310,7 @@ const Dashboard = () => {
               <Col lg="9">
                 <Tab.Content>
                   <Tab.Pane eventKey="titleSubHeadings">
-                    عنوان و زیرعنوان
+                    <TitleSubHeadings userData={user} uid={currentUser.uid} />
                   </Tab.Pane>
                   <Tab.Pane eventKey="links">لینک ها</Tab.Pane>
                   <Tab.Pane eventKey="contact">تماس</Tab.Pane>

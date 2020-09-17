@@ -17,6 +17,7 @@ import Head from "next/head"
 import router from "next/router"
 import TitleSubHeadings from "../src/components/dashboard/TitleSubHeadings"
 import Links from "../src/components/dashboard/Links"
+import Contact from "../src/components/dashboard/Contact"
 
 const Dashboard = () => {
   // validatedForm state to notify when the user sends a blank input
@@ -316,7 +317,9 @@ const Dashboard = () => {
                   <Tab.Pane eventKey="links">
                     <Links userData={user} uid={currentUser.uid} />
                   </Tab.Pane>
-                  <Tab.Pane eventKey="contact">تماس</Tab.Pane>
+                  <Tab.Pane eventKey="contact">
+                    <Contact userData={user} uid={currentUser.uid} />
+                  </Tab.Pane>
                   <Tab.Pane eventKey="socialNetworks">
                     شبکه‌های اجتماعی
                   </Tab.Pane>

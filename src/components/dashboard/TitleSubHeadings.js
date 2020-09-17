@@ -6,6 +6,8 @@ const TitleSubHeadings = ({ userData, uid }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     try {
+      // Get inputs value and set in database
+      // Uid is user token
       firebase.database().ref(`/users/${uid}/titleSubHeadings`).set({
         title: event.target[0].value,
         subHeadings: event.target[1].value,

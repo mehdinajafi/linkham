@@ -1,5 +1,5 @@
 @font-face {
-  src: url("../public/fonts/Sahel/Sahel.ttf");
+  src: url("../public/assets/fonts/Sahel/Sahel.ttf");
   font-family: "Sahel";
 }
 
@@ -24,4 +24,9 @@ a {
 div {
   direction: rtl !important;
   text-align: right;
+}
+
+.ltr {
+  direction: ltr !important;
+  text-align: left;
 }

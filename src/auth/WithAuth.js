@@ -26,12 +26,20 @@ const withAuth = (Component) => {
           // When the user is authenticated push user to dashboard
           router.push("/dashboard")
         } else {
-          this.setState({
-            pennding: false,
-          })
           // When the user is not authenticated and go to dashboard push user to home page
           if (router.router.route === "/dashboard") {
             router.push("/")
+            this.setState({
+              pennding: false,
+            })
+          } else if (
+            router.router.route === "/user/register" ||
+            router.router.route === "/user/login" ||
+            router.router.route === "/"
+          ) {
+            this.setState({
+              pennding: false,
+            })
           }
         }
       })
@@ -39,7 +47,7 @@ const withAuth = (Component) => {
 
     render() {
       if (this.state.pennding) {
-        return <h1>صبر کنید...</h1>
+        return <h1>لطفا صبر کنید...</h1>
       } else {
         return (
           <AuthContext.Provider value={{ currentUser: this.state.currentUser }}>

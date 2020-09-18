@@ -20,6 +20,7 @@ import Links from "../src/components/dashboard/Links"
 import Contact from "../src/components/dashboard/Contact"
 import SocialNetworks from "../src/components/dashboard/SocialNetworks"
 import Routing from "../src/components/dashboard/Routing"
+import Bio from "../src/components/dashboard/Bio"
 
 const Dashboard = () => {
   // validatedForm state to notify when the user sends a blank input
@@ -86,7 +87,7 @@ const Dashboard = () => {
                 subHeadings: event.target[2].value,
               },
             })
-          router.push("/dashboard")
+          router.reload()
         } catch (error) {
           alert("خطایی پیش آمده است لطفا دوباره امتحان کنید")
         }
@@ -328,7 +329,9 @@ const Dashboard = () => {
                   <Tab.Pane eventKey="routing">
                     <Routing userData={user} uid={currentUser.uid} />
                   </Tab.Pane>
-                  <Tab.Pane eventKey="‌bio">توضیحات و متن</Tab.Pane>
+                  <Tab.Pane eventKey="‌bio">
+                    <Bio userData={user} uid={currentUser.uid} />
+                  </Tab.Pane>
                 </Tab.Content>
               </Col>
             </Row>

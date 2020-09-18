@@ -18,6 +18,7 @@ import router from "next/router"
 import TitleSubHeadings from "../src/components/dashboard/TitleSubHeadings"
 import Links from "../src/components/dashboard/Links"
 import Contact from "../src/components/dashboard/Contact"
+import SocialNetworks from "../src/components/dashboard/SocialNetworks"
 
 const Dashboard = () => {
   // validatedForm state to notify when the user sends a blank input
@@ -321,7 +322,7 @@ const Dashboard = () => {
                     <Contact userData={user} uid={currentUser.uid} />
                   </Tab.Pane>
                   <Tab.Pane eventKey="socialNetworks">
-                    شبکه‌های اجتماعی
+                    <SocialNetworks userData={user} uid={currentUser.uid} />
                   </Tab.Pane>
                   <Tab.Pane eventKey="routing">مسیریابی</Tab.Pane>
                   <Tab.Pane eventKey="‌bio">توضیحات و متن</Tab.Pane>

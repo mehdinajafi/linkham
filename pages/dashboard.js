@@ -19,6 +19,7 @@ import TitleSubHeadings from "../src/components/dashboard/TitleSubHeadings"
 import Links from "../src/components/dashboard/Links"
 import Contact from "../src/components/dashboard/Contact"
 import SocialNetworks from "../src/components/dashboard/SocialNetworks"
+import Routing from "../src/components/dashboard/Routing"
 
 const Dashboard = () => {
   // validatedForm state to notify when the user sends a blank input
@@ -324,7 +325,9 @@ const Dashboard = () => {
                   <Tab.Pane eventKey="socialNetworks">
                     <SocialNetworks userData={user} uid={currentUser.uid} />
                   </Tab.Pane>
-                  <Tab.Pane eventKey="routing">مسیریابی</Tab.Pane>
+                  <Tab.Pane eventKey="routing">
+                    <Routing userData={user} uid={currentUser.uid} />
+                  </Tab.Pane>
                   <Tab.Pane eventKey="‌bio">توضیحات و متن</Tab.Pane>
                 </Tab.Content>
               </Col>

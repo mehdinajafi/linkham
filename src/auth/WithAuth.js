@@ -24,7 +24,7 @@ const withAuth = (Component) => {
             pennding: false,
           })
           // When the user is authenticated push user to dashboard
-          router.push("/dashboard")
+          //router.push("/dashboard")
         } else {
           // When the user is not authenticated and go to dashboard push user to home page
           if (router.router.route === "/dashboard") {

@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { firebase } from "../src/auth/firebase"
 import UserProfile from "../src/components/Profile/UserProfile"
 import UserNotFound from "../src/components/Profile/UserNotFound"
+import { Container, Row, Col } from "react-bootstrap"
 
 const Profile = () => {
   // I use this to get the page address or user address to find the user data
@@ -49,9 +50,13 @@ const Profile = () => {
     return <h1>لطفا صبر کنید...</h1>
   }
   return (
-    <div>
-      {userData ? <UserProfile userData={userData} /> : <UserNotFound />}
-    </div>
+    <Container>
+      <Row>
+        <Col sm={10} md={8} lg={6} xl={5} className="mx-auto px-3">
+          {userData ? <UserProfile userData={userData} /> : <UserNotFound />}
+        </Col>
+      </Row>
+    </Container>
   )
 }
 

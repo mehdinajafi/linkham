@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import { firebase } from "../src/auth/firebase"
+import UserProfile from "../src/components/Profile/UserProfile"
+import UserNotFound from "../src/components/Profile/UserNotFound"
 
 const Profile = () => {
   // I use this to get the page address or user address to find the user data
   const router = useRouter()
   // UserData is object of user data includes links, social networks address,....
-  const [userData, setUserData] = useState({})
+  const [userData, setUserData] = useState(null)
   // pennding for show loading. loading disappears when the user is found
   const [pennding, setPennding] = useState(true)
 
@@ -46,7 +48,11 @@ const Profile = () => {
   if (pennding) {
     return <h1>لطفا صبر کنید...</h1>
   }
-  return <div>User Profile</div>
+  return (
+    <div>
+      {userData ? <UserProfile userData={userData} /> : <UserNotFound />}
+    </div>
+  )
 }
 
 export default Profile

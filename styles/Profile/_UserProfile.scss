@@ -1,0 +1,38 @@
+.social-networks {
+  .social-network-link {
+    text-decoration: none;
+    border-radius: 0.5em;
+    font-weight: 700;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  &-telegram {
+    background: #0088cc;
+  }
+
+  &-instagram {
+    background: #833ab4; // fallback for old browsers
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: -moz-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: -o-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: -ms-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(
+      to right,
+      #fcb045,
+      #fd1d1d,
+      #833ab4
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  &-github {
+    background-color: #2b3137;
+  }
+
+  &-linkedin {
+    background-color: #0077b5;
+  }
+}

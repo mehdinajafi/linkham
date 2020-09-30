@@ -1,4 +1,5 @@
 import React from "react"
+import Contact from "./sections/Contact"
 import SocialNetworks from "./sections/SocialNetworks"
 
 const UserProfile = ({ userData }) => {
@@ -16,6 +17,8 @@ const UserProfile = ({ userData }) => {
       {userData.socialNetworks && (
         <SocialNetworks socialNetworks={userData.socialNetworks} />
       )}
+      {/* Show if there is at least one contact */}
+      {userData.contact && <Contact contact={userData.contact} />}
     </React.Fragment>
   )
 }

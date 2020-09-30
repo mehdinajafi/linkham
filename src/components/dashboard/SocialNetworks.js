@@ -16,10 +16,18 @@ const SocialNetworks = ({ userData, uid }) => {
         .database()
         .ref(`/users/${uid}/socialNetworks`)
         .set({
-          instagram: event.target[0].value.trim().toLowerCase(),
-          telegram: event.target[1].value.trim().toLowerCase(),
-          linkedin: event.target[2].value.trim().toLowerCase(),
-          github: event.target[3].value.trim().toLowerCase(),
+          instagram: event.target[0].value.trim()
+            ? event.target[0].value.trim().toLowerCase()
+            : null,
+          telegram: event.target[1].value.trim()
+            ? event.target[1].value.trim().toLowerCase()
+            : null,
+          linkedin: event.target[2].value.trim()
+            ? event.target[2].value.trim().toLowerCase()
+            : null,
+          github: event.target[3].value.trim()
+            ? event.target[3].value.trim().toLowerCase()
+            : null,
         })
         // A message indicating that the operation was successful is then displayed
         .then(() => setSuccess(true))

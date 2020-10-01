@@ -8,15 +8,17 @@ const Bio = ({ userData, uid }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    // Get inputs
+    const [bioInput] = event.target.elements
 
     try {
-      // Get inputs value and set in database
+      // Set in database
       // Uid is user token
       firebase
         .database()
         .ref(`/users/${uid}`)
         .update({
-          bio: event.target[0].value,
+          bio: bioInput.value.trim() ? bioInput.value : null,
         })
         // A message indicating that the operation was successful is then displayed
         .then(() => setSuccess(true))

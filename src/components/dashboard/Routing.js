@@ -8,6 +8,8 @@ const Routing = ({ userData, uid }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    // Get inputs
+    let [googleMapsInput, wazeInput] = event.target.elements
 
     try {
       // Get inputs value and set in database
@@ -16,11 +18,15 @@ const Routing = ({ userData, uid }) => {
         .database()
         .ref(`/users/${uid}/routing`)
         .set({
-          googleMaps: event.target[0].value.trim().toLowerCase(),
-          waze: event.target[1].value.trim().toLowerCase(),
+          googleMaps: googleMapsInput.value.trim()
+            ? googleMapsInput.value.trim().toLowerCase()
+            : null,
+          waze: wazeInput.value.trim()
+            ? wazeInput.value.trim().toLowerCase()
+            : null,
         })
         // A message indicating that the operation was successful is then displayed
-        .then(() => setSucess(true))
+        .then(() => setSuccess(true))
     } catch (error) {
       alert("خطایی پیش آمده است لطفا دوباره امتحان کنید")
     }

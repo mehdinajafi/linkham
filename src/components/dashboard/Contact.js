@@ -8,16 +8,20 @@ const Contact = ({ userData, uid }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    // Get inputs
+    const [emailInput, phoneNumberInput] = event.target.elements
 
     try {
-      // Get inputs value and set in database
+      // Set in database
       // Uid is user token
       firebase
         .database()
         .ref(`/users/${uid}/contact`)
         .set({
-          email: event.target[0].value.trim().toLowerCase(),
-          phoneNumber: event.target[1].value.trim(),
+          email: emailInput.value.trim() ? emailInput.value.trim() : null,
+          phoneNumber: phoneNumberInput.value.trim()
+            ? phoneNumberInput.value.trim()
+            : null,
         })
         // A message indicating that the operation was successful is then displayed
         .then(() => setSuccess(true))

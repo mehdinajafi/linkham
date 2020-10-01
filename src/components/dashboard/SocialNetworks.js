@@ -8,26 +8,31 @@ const SocialNetworks = ({ userData, uid }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    // Get inputs
+    const [
+      instagramInput,
+      telegramInput,
+      linkedinInput,
+      githubInput,
+    ] = event.target.elements
 
     try {
-      // Get inputs value and set in database
+      // Set in database
       // Uid is user token
       firebase
         .database()
         .ref(`/users/${uid}/socialNetworks`)
         .set({
-          instagram: event.target[0].value.trim()
-            ? event.target[0].value.trim().toLowerCase()
+          instagram: instagramInput.value.trim()
+            ? instagramInput.value.trim()
             : null,
-          telegram: event.target[1].value.trim()
-            ? event.target[1].value.trim().toLowerCase()
+          telegram: telegramInput.value.trim()
+            ? telegramInput.value.trim()
             : null,
-          linkedin: event.target[2].value.trim()
-            ? event.target[2].value.trim().toLowerCase()
+          linkedin: linkedinInput.value.trim()
+            ? linkedinInput.value.trim()
             : null,
-          github: event.target[3].value.trim()
-            ? event.target[3].value.trim().toLowerCase()
-            : null,
+          github: githubInput.value.trim() ? githubInput.value.trim() : null,
         })
         // A message indicating that the operation was successful is then displayed
         .then(() => setSuccess(true))

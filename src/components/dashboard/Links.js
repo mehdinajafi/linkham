@@ -11,32 +11,24 @@ const Links = ({ userData, uid }) => {
   const handleSubmit = (event) => {
     setValidatedForm(true)
     event.preventDefault()
+    // Get inputs
+    const [linkTitleInput, linkAddressInput] = event.target.elements
 
-    if (
-      event.target[0].value.trim().length > 0 &&
-      event.target[1].value.trim().length > 0
-    ) {
+    if (linkTitleInput.value.trim() && linkAddressInput.value.trim()) {
       try {
-        // Get inputs value and set in database
+        // Set in database
         // Uid is user token
         firebase
           .database()
           .ref(`/users/${uid}/links`)
           .set({
-            linkTitle: event.target[0].value,
-            linkAddress: event.target[1].value,
+            linkTitle: linkTitleInput.value,
+            linkAddress: linkAddressInput.value.trim(),
           })
           // A message indicating that the operation was successful is then displayed
           .then(() => setSuccess(true))
       } catch (error) {
         alert("خطایی پیش آمده است لطفا دوباره امتحان کنید")
-      }
-    } else {
-      if (event.target[0].value.trim().length === 0) {
-        event.target[0].value = ""
-      }
-      if (event.target[1].value.trim().length === 0) {
-        event.target[1].value = ""
       }
     }
   }
@@ -71,7 +63,7 @@ const Links = ({ userData, uid }) => {
           onChange={() => setSuccess(false)}
           defaultValue={userData.links ? userData.links.linkAddress : null}
           required
-          dir="auto"
+          dir="ltr"
         />
         <Form.Control.Feedback type="invalid">
           لطفا نشانی را وارد کنید

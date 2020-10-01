@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
-import { AuthContext } from "../src/auth/WithAuth"
+import { AuthContext } from "../src/context/AuthContext"
 import Layout from "../src/components/Layout"
-import { firebase } from "../src/auth/firebase"
+import { firebase } from "../src/firebase/firebase"
 import {
   Tab,
   Container,
@@ -105,7 +105,7 @@ const Dashboard = () => {
       <Head>
         <title>داشبورد - لینک هام</title>
       </Head>
-
+      {/* <button onClick={firebase.auth().signOut()}>ssd</button> */}
       {/* Is the user new? */}
       {!user ? (
         <Container className="mt-5">

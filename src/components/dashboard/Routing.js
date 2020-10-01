@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { firebase } from "../../auth/firebase"
+import { firebase } from "../../firebase/firebase"
 import { Form, Button, InputGroup } from "react-bootstrap"
 
 const Routing = ({ userData, uid }) => {

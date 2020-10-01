@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useRouter } from "next/router"
-import { firebase } from "../src/auth/firebase"
+import { firebase } from "../src/firebase/firebase"
 import UserProfile from "../src/components/Profile/UserProfile"
 import UserNotFound from "../src/components/Profile/UserNotFound"
 import { Container, Row, Col } from "react-bootstrap"

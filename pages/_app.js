@@ -1,10 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import "../styles/globals.css"
+import "../styles/global/globals.css"
 import "../styles/main.scss"
-import withAuth from "../src/auth/WithAuth"
+import AuthProvider from "../src/context/AuthContext"
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
+  )
 }
 
-export default withAuth(MyApp)
+export default MyApp

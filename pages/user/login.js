@@ -1,9 +1,6 @@
 import React, { useCallback } from "react"
 import { Container, Form, Button, Row, Col, Card } from "react-bootstrap"
-import { auth } from "../../src/auth/firebase"
-// withAuth is a Hoc with a context include current user for use current user in app and redirect to routes we want
-import withAuth from "../../src/auth/WithAuth"
-
+import { firebase } from "../../src/firebase/firebase"
 import router from "next/router"
 import Link from "next/link"
 import Head from "next/head"
@@ -18,7 +15,7 @@ const Login = () => {
       const email = event.target[0].value
       const password = event.target[1].value
       try {
-        await auth.signInWithEmailAndPassword(email, password)
+        await firebase.auth().signInWithEmailAndPassword(email, password)
         // When sign in push user to dashboard
         router.push("/dashboard")
       } catch (error) {
@@ -83,4 +80,4 @@ const Login = () => {
   )
 }
 
-export default withAuth(Login)
+export default Login

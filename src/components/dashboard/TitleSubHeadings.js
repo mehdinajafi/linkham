@@ -1,5 +1,5 @@
 import React from "react"
-import { firebase } from "../../auth/firebase"
+import { firebase } from "../../firebase/firebase"
 import { Form, Button } from "react-bootstrap"
 
 const TitleSubHeadings = ({ userData, uid }) => {

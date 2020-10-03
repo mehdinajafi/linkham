@@ -2,6 +2,7 @@ import React from "react"
 import Bio from "./sections/Bio"
 import Contact from "./sections/Contact"
 import Links from "./sections/Links"
+import Routing from "./sections/Routing"
 import SocialNetworks from "./sections/SocialNetworks"
 
 const UserProfile = ({ userData }) => {
@@ -25,6 +26,8 @@ const UserProfile = ({ userData }) => {
       {userData.socialNetworks && (
         <SocialNetworks socialNetworks={userData.socialNetworks} />
       )}
+      {/* Show if there is at least one route link */}
+      {userData.routing && <Routing routing={userData.routing} />}
     </React.Fragment>
   )
 }

@@ -36,3 +36,15 @@
     background-color: #0077b5;
   }
 }
+
+.routing {
+  &-googleMaps {
+    text-decoration: none !important;
+    background-color: #c0f0d9;
+  }
+
+  &-waze {
+    text-decoration: none !important;
+    background-color: #b2d9e6;
+  }
+}

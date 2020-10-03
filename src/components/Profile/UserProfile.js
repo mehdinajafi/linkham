@@ -1,4 +1,5 @@
 import React from "react"
+import Bio from "./sections/Bio"
 import Contact from "./sections/Contact"
 import Links from "./sections/Links"
 import SocialNetworks from "./sections/SocialNetworks"
@@ -14,6 +15,8 @@ const UserProfile = ({ userData }) => {
           {userData.titleSubHeadings.subHeadings}
         </div>
       </div>
+      {/* Show if there is bio */}
+      {userData.bio && <Bio bio={userData.bio} />}
       {/* Show if there is at least one link */}
       {userData.links && <Links links={userData.links} />}
       {/* Show if there is at least one contact */}

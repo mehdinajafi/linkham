@@ -1,7 +1,17 @@
 .social-networks {
+  display: grid;
+  justify-items: center;
+  grid-gap: 0.5em;
+
+  &-col {
+    grid-template-columns: 100%;
+  }
+  &-row {
+    grid-template-columns: 49% 49%;
+  }
+
   .social-network-link {
     text-decoration: none;
-    border-radius: 0.5em;
     font-weight: 700;
     transition: transform 0.2s;
 

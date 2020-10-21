@@ -4,6 +4,7 @@ import { firebase } from "../src/firebase/firebase"
 import UserProfile from "../src/components/Profile/UserProfile"
 import UserNotFound from "../src/components/Profile/UserNotFound"
 import { Container, Row, Col } from "react-bootstrap"
+import Loading from "../src/components/Loading"
 
 const Profile = () => {
   // I use this to get the page address or user address to find the user data
@@ -47,7 +48,7 @@ const Profile = () => {
 
   // Show loading
   if (pennding) {
-    return <h1>لطفا صبر کنید...</h1>
+    return <Loading />
   }
   return (
     <Container>

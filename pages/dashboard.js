@@ -21,6 +21,7 @@ import Contact from "../src/components/dashboard/Contact"
 import SocialNetworks from "../src/components/dashboard/SocialNetworks"
 import Routing from "../src/components/dashboard/Routing"
 import Bio from "../src/components/dashboard/Bio"
+import Loading from "../src/components/Loading"
 
 const Dashboard = () => {
   // validatedForm state to notify when the user sends a blank input
@@ -97,7 +98,7 @@ const Dashboard = () => {
 
   // When pennding is true show loading. This state gets false in useEffect
   if (pennding) {
-    return <h1>لطفا صبر کنید...</h1>
+    return <Loading />
   }
 
   return (

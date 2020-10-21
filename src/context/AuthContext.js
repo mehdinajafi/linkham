@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { firebase } from "../firebase/firebase"
 import router from "next/router"
+import Loading from "../components/Loading"
 
 export const AuthContext = React.createContext()
 
@@ -37,7 +38,7 @@ const AuthProvider = ({ children }) => {
   }, [])
 
   if (pennding) {
-    return <h1>لطفا صبر کنید...</h1>
+    return <Loading />
   }
   return (
     <AuthContext.Provider value={{ currentUser: currentUser }}>

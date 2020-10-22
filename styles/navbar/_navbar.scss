@@ -3,21 +3,15 @@
 }
 
 .navbar {
-  background-color: #ffffff;
-  border-bottom: 1px solid #4a00e0;
-  &-brand {
-    background: #8e2de2; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
-    background: -moz-linear-gradient(to right, #4a00e0, #8e2de2);
-    background: -o-linear-gradient(to right, #4a00e0, #8e2de2);
-    background: linear-gradient(
-      to right,
-      #4a00e0,
-      #8e2de2
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bolder;
+  &-dark {
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 1);
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+  &-brand a {
+    text-decoration: none;
   }
 }

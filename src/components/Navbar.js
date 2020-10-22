@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
 import { firebase } from "../firebase/firebase"
-import Link from "next/link"
 import { Navbar, Container, Nav, Button } from "react-bootstrap"
 
 const NavbarPage = () => {
@@ -13,12 +12,12 @@ const NavbarPage = () => {
   }
 
   return (
-    <Navbar expand="sm" className="sticky-top">
-      <Container>
+    <Navbar expand="md" bg="primary" variant="dark" className="sticky-top">
+      <Container fluid="md">
         <Navbar.Brand>
-          <Link href="/">
-            <a>لینک هام.</a>
-          </Link>
+          <a href="/" className="text-white font-weight-bold">
+            لینک هام
+          </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar"></Navbar.Toggle>
         <Navbar.Collapse id="main-navbar">
@@ -28,29 +27,30 @@ const NavbarPage = () => {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="/about-us" className="ml-auto mr-3">
-              درباره ما
-            </Nav.Link>
-          </Nav>
-          <Nav>
             <Nav.Link href="/tutorial" className="ml-auto mr-3">
               آموزش ساخت
             </Nav.Link>
           </Nav>
+          <Nav>
+            <Nav.Link href="/about-us" className="ml-auto mr-3">
+              درباره ما
+            </Nav.Link>
+          </Nav>
+          <hr className="bg-light my-2 d-md-none"></hr>
           <Nav className="mr-auto">
             {/* If the user was authenticated, display the Dashboard and Exit button,
             otherwise the Login and Register button. */}
             {currentUser ? (
               <React.Fragment>
                 <Nav.Link href="/dashboard">
-                  <Button variant="success" className="mx-3 my-1 w-sm-100">
+                  <Button variant="light" className="mx-3 my-1 w-sm-100">
                     داشبورد
                   </Button>
                 </Nav.Link>
 
                 <Nav.Link href="/">
                   <Button
-                    variant="outline-danger"
+                    variant="danger"
                     className="mx-3 my-1"
                     onClick={handleExit}
                   >
@@ -61,7 +61,7 @@ const NavbarPage = () => {
             ) : (
               <React.Fragment>
                 <Nav.Link href="/user/login">
-                  <Button variant="success" className="mx-3 my-1 w-sm-100">
+                  <Button variant="light" className="mx-3 my-1 w-sm-100">
                     <svg
                       width="1em"
                       height="1em"
@@ -81,7 +81,7 @@ const NavbarPage = () => {
                 </Nav.Link>
 
                 <Nav.Link href="/user/register">
-                  <Button variant="outline-primary" className="mx-3 my-1">
+                  <Button variant="outline-light" className="mx-3 my-1">
                     <svg
                       width="1em"
                       height="1em"

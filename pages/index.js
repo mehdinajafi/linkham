@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Layout from "../src/components/Layout"
+import Header from "../src/components/home-page/Header"
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <Head>
         <title>لینک‌هام</title>
       </Head>
-      <div>Home</div>
+      <Header />
     </Layout>
   )
 }

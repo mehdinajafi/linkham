@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css"
+import "../styles/bootstarp.scss"
 import "../styles/global/globals.css"
 import "../styles/main.scss"
 import AuthProvider from "../src/context/AuthContext"

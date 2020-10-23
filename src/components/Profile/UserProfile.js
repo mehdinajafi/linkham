@@ -1,4 +1,5 @@
 import React from "react"
+import Head from "next/head"
 import Bio from "./sections/Bio"
 import Contact from "./sections/Contact"
 import Links from "./sections/Links"
@@ -8,6 +9,9 @@ import SocialNetworks from "./sections/SocialNetworks"
 const UserProfile = ({ userData }) => {
   return (
     <React.Fragment>
+      <Head>
+        <title>{userData.titleSubHeadings.title} | لینک هام</title>
+      </Head>
       <div className="d-flex flex-column py-2">
         <h3 className="text-dark text-center">
           {userData.titleSubHeadings.title}
